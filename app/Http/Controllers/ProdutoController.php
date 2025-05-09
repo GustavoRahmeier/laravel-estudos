@@ -43,7 +43,7 @@ class ProdutoController extends Controller
         ]);
 
         if ($created) {
-            return redirect()->route('produtos.index')->with('message', 'Criado com sucesso');
+            return redirect()->route('produtos.index')->with('message', 'Produto criado com sucesso');
         } else {
             return redirect()->route('produtos.index')->with('message', 'Ocorreu um erro');
         }

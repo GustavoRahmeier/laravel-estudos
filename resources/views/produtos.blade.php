@@ -31,6 +31,8 @@
 
     @endforeach
 </table>
+
 <a href="{{ route('produtos.create') }}">Criar Produto</a>
+<a href="{{ route('menu') }}" >VOLTAR</a>
 
 @endsection

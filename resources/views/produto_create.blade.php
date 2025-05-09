@@ -22,10 +22,11 @@
             <input id="preco" type="number" name="preco" value="">
         </div>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Cadastrar</button><br><br>
         
     </form> 
-
+    
+    <a href="{{ url()->previous() }}" class="btn-cancelar">Cancelar</a>
 </div>
 
 
