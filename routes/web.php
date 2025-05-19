@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\FuncionarioController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\CargoController;
+
 
 Route::get('/', [MenuController::class, 'index'])->name('menu');
 
@@ -23,5 +25,11 @@ Route::delete('/funcionarios/{funcionario}', [FuncionarioController::class, 'des
 Route::get('/funcionarios/{funcionario}/edit', [FuncionarioController::class, 'edit'])->name('funcionarios.edit');
 Route::put('/funcionarios/{funcionario}', [FuncionarioController::class, 'update'])->name('funcionarios.update');
 
-
+Route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.create');
+Route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
+Route::post('/cargos', [CargoController::class, 'store'])->name('cargos.store');
+Route::get('/cargos/{cargo}', [CargoController::class, 'show'])->name('cargos.show');
+Route::delete('/cargos/{cargo}', [CargoController::class, 'destroy'])->name('cargos.destroy');
+Route::get('/cargos/{cargo}/edit', [CargoController::class, 'edit'])->name('cargos.edit');
+Route::put('/cargos/{cargo}', [CargoController::class, 'update'])->name('cargos.update');
 //Route::resource('produtos', ProdutoController::class);

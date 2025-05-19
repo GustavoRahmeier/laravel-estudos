@@ -13,7 +13,7 @@
         @csrf
 
         <input type="hidden" name="_method" value="PUT">
-        <h2>Editar Produto</h2>
+        <h2>Editar Funcionario</h2>
 
         <div class="form-group">
             <label for="nome">Nome</label>
