@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {{-- @vite(['resources/css/app.css']) --}}
 
-    <title>CRUD</title>
+    <title>Estoque de Mercado</title>
 </head>
 <body>
     <div>

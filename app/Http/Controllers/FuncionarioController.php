@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Funcionario;
+use App\Models\Cargo;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
 {
     public readonly Funcionario $funcionario;
+    public readonly Cargo $cargo;
 
     public function __construct()
     {
         $this->funcionario = new Funcionario();
+        $this->cargo = new Cargo();
     }
 
     /**
@@ -19,7 +22,7 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        $funcionarios = $this->funcionario->all();
+        $funcionarios = $this->funcionario->with('cargo')->orderBy('nome')->get();
         return view('funcionarios', ['funcionarios' => $funcionarios]);
     }
 
@@ -28,7 +31,10 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        return view('funcionario_create');
+
+        $cargos = $this->cargo->all();
+
+        return view('funcionario_create', compact('cargos'));
     }
 
     /**
@@ -36,11 +42,20 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
+        // $validated = $request->validate([
+        //     .. campos
+        //     ]);
+          
+        //   if($validated) {
+        //     $created = $this->funcionario->create($validated);
+        //   }
+
         $created = $this->funcionario->create([
             'nome' => $request->input('nome'),
             'idade' => $request->input('idade'),
             'genero' => $request->input('genero'),
-            'salario' => $request->input('salario')
+            'salario' => $request->input('salario'),
+            'id_cargo' => $request->input('id_cargo')
         ]);
 
         if ($created) {
@@ -63,7 +78,9 @@ class FuncionarioController extends Controller
      */
     public function edit(Funcionario $funcionario)
     {
-        return view('funcionario_edit', ['funcionario' => $funcionario]);
+        $cargos = $this->cargo->all();
+
+        return view('funcionario_edit', ['funcionario' => $funcionario], compact('cargos'));
     }
 
     /**
@@ -71,6 +88,12 @@ class FuncionarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        $request->validate([
+            'id_cargo' => 'required|exists:cargos,id',
+            
+        ]);
+
         $updated = $this->funcionario->where('id', $id)->update($request->except(['_token', '_method']));
 
         if ($updated) {

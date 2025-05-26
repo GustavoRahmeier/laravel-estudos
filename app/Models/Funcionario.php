@@ -10,6 +10,12 @@ class Funcionario extends Model
         'nome',
         'idade',
         'genero',
-        'salario'
+        'salario',
+        'id_cargo'
     ];
+
+    public function cargo()
+    {
+        return $this->belongsTo(Cargo::class, 'id_cargo');
+    }
 }

@@ -64,13 +64,13 @@ button,
     transition: all 0.3s ease;
 }
 
-.btn-cancelar{
+.btn-cancelar {
     width: 95%;
     text-align: center;
     background-color: #a53c39;
 }
 
-.btn-cancelar:hover{
+.btn-cancelar:hover {
     background-color: #c9302c;
     transform: translateY(-2px);
 }
@@ -186,8 +186,7 @@ a:hover {
 }
 
 .dados-funcionario table,
-.dados-produto table
-.dados-cargo table{
+.dados-produto table .dados-cargo table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 10px;
@@ -197,7 +196,7 @@ a:hover {
 .dados-funcionario td,
 .dados-produto th,
 .dados-produto td,
-.dados-cargo th, 
+.dados-cargo th,
 .dados-cargo td {
     padding: 8px 12px;
     text-align: left;
@@ -206,7 +205,7 @@ a:hover {
 
 .dados-funcionario th,
 .dados-produto th,
-.dados-cargo th{
+.dados-cargo th {
     background-color: #f2f2f2;
     font-weight: bold;
 }
@@ -235,5 +234,20 @@ a:hover {
 
 .btn-voltar {
     background-color: #2e4d8f;
-
 }
+
+select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }

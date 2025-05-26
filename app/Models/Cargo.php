@@ -13,4 +13,9 @@ class Cargo extends Model
         'salario_max',
         'descricao',
     ];
+
+    public function funcionarios()
+    {
+        return $this->hasMany(Funcionario::class);
+    }
 }

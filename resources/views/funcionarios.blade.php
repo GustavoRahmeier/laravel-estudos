@@ -15,6 +15,7 @@
         <th>Idade</th>
         <th>Gênero</th>
         <th>Salário</th>
+        <th>Cargo</th>
         <th>Ações</th>
     </tr>
 
@@ -25,6 +26,7 @@
         <td>{{ $funcionario->idade }} </td>
         <td>{{ $funcionario->genero }}</td>
         <td> R$ {{ $funcionario->salario }}</td>
+        <td>{{ $funcionario->cargo->descricao }}</td>
         
         <td> <a href="{{ route('funcionarios.show', ['funcionario' => $funcionario->id ]) }}">Mostrar Funcionario</a>
             <a href="{{ route('funcionarios.edit', ['funcionario' => $funcionario->id ]) }}">Editar Funcionario</a>

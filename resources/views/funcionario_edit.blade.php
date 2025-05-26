@@ -16,6 +16,18 @@
         <h2>Editar Funcionario</h2>
 
         <div class="form-group">
+            <label for="">Cargos</label>
+            <select name="id_cargo">
+                <option value="">Selecione</option>
+                @foreach ($cargos as $cargo)
+                <option value="{{ $cargo->id }}" {{ $funcionario->id_cargo == $cargo->id ? 'selected' : '' }}>
+                    {{ $cargo->descricao }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="nome">Nome</label>
             <input id="nome" type="text" name="nome" value="{{$funcionario->nome}}">
         </div>
