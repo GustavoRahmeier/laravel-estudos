@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CargoController extends Controller
 {
 
-    public readonly cargo $cargo; 
+    public readonly Cargo $cargo; 
 
     public function __construct()
     {

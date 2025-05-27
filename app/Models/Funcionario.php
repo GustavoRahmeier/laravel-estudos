@@ -18,4 +18,9 @@ class Funcionario extends Model
     {
         return $this->belongsTo(Cargo::class, 'id_cargo');
     }
+
+    public function turnos()
+    {
+        return $this->belongsToMany(Turno::class);
+    }
 }

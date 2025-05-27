@@ -5,6 +5,8 @@ use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CargoController;
+use App\Http\Controllers\FuncionarioTurnoController;
+use App\Http\Controllers\TurnoController;
 
 
 Route::get('/', [MenuController::class, 'index'])->name('menu');
@@ -33,3 +35,10 @@ Route::delete('/cargos/{cargo}', [CargoController::class, 'destroy'])->name('car
 Route::get('/cargos/{cargo}/edit', [CargoController::class, 'edit'])->name('cargos.edit');
 Route::put('/cargos/{cargo}', [CargoController::class, 'update'])->name('cargos.update');
 //Route::resource('produtos', ProdutoController::class);
+
+Route::get('/turnos/create', [TurnoController::class, 'create'])->name('turnos.create');
+Route::post('/turnos', [TurnoController::class, 'store'])->name('turnos.store');
+
+
+Route::get('/funcionarios/turnos', [FuncionarioTurnoController::class, 'create'])->name('funcionario.turnos.create');
+Route::post('/funcionarios/turnos', [FuncionarioTurnoController::class, 'store'])->name('funcionario.turnos.store');
