@@ -28,6 +28,10 @@
                 <td>{{$funcionario->salario}}</td>
             </tr>
         </table>
+        @foreach ($funcionario->turnos as $turno)
+            <b>{{$turno->nome}}</b>
+        @endforeach
+
     </div>
 
     <form class="form-container-show" action="{{ route('funcionarios.destroy', ['funcionario' => $funcionario->id]) }}" method="POST">

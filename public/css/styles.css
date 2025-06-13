@@ -180,13 +180,15 @@ a:hover {
 
 .dados-funcionario,
 .dados-produto,
-.dados-cargo {
+.dados-cargo,
+.dados-turno {
     width: 100%;
     font-family: Arial, sans-serif;
 }
 
 .dados-funcionario table,
-.dados-produto table .dados-cargo table {
+.dados-produto table .dados-cargo table,
+.dados-turno table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 10px;
@@ -197,7 +199,9 @@ a:hover {
 .dados-produto th,
 .dados-produto td,
 .dados-cargo th,
-.dados-cargo td {
+.dados-cargo td,
+.dados-turno th,
+.dados-turno td {
     padding: 8px 12px;
     text-align: left;
     color: #333;
@@ -205,7 +209,8 @@ a:hover {
 
 .dados-funcionario th,
 .dados-produto th,
-.dados-cargo th {
+.dados-cargo th,
+.dados-turno th {
     background-color: #f2f2f2;
     font-weight: bold;
 }
@@ -243,11 +248,50 @@ select {
     border: 1px solid #ccc;
     background-color: #f9f9f9;
     font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
+}
+
+.turno-wrapper {
+    margin: 1rem 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.turno-title {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.turno-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.turno-option {
+    display: flex;
+    align-items: center;
+    background-color: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid #cbd5e1;
+}
+
+.turno-option:hover {
+    background-color: #e2e8f0;
+}
+
+.turno-option input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #2563eb; /* azul bonito */
+}

@@ -37,8 +37,14 @@ Route::put('/cargos/{cargo}', [CargoController::class, 'update'])->name('cargos.
 //Route::resource('produtos', ProdutoController::class);
 
 Route::get('/turnos/create', [TurnoController::class, 'create'])->name('turnos.create');
+Route::get('/turnos', [TurnoController::class, 'index'])->name('turnos.index');
 Route::post('/turnos', [TurnoController::class, 'store'])->name('turnos.store');
+Route::get('/turnos/{turno}', [TurnoController::class, 'show'])->name('turnos.show');
+Route::delete('/turnos/{turno}', [TurnoController::class, 'destroy'])->name('turnos.destroy');
+Route::get('/turnos/{turno}/edit', [TurnoController::class, 'edit'])->name('turnos.edit');
+Route::put('/turnos/{turno}', [TurnoController::class, 'update'])->name('turnos.update');
 
-
-Route::get('/funcionarios/turnos', [FuncionarioTurnoController::class, 'create'])->name('funcionario.turnos.create');
+Route::get('/funcionarios/turnos/create', [FuncionarioTurnoController::class, 'create'])->name('funcionario.turnos.create');
 Route::post('/funcionarios/turnos', [FuncionarioTurnoController::class, 'store'])->name('funcionario.turnos.store');
+
+

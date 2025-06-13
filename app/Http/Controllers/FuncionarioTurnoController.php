@@ -42,12 +42,12 @@ class FuncionarioTurnoController extends Controller
     public function store(Request $request)
     {
         $funcionarioId = $request->input('funcionario_id');
-        $cargos = $request->input('cargos', []);
+        $turnos = $request->input('turnos', []);
 
         $funcionario = $this->funcionario->find($funcionarioId);
-        $funcionario->cargos()->sync($cargos);
+        $funcionario->turnos()->sync($turnos);
 
-        return redirect()->route('funcionarios.index')->with('message', 'Cargos atribuidos ao funcionario');
+        return redirect()->route('funcionarios.index')->with('message', 'Turnos atribuidos ao funcionario');
 
     }
 
@@ -64,7 +64,7 @@ class FuncionarioTurnoController extends Controller
      */
     public function edit(turno $turno)
     {
-        //
+        
     }
 
     /**

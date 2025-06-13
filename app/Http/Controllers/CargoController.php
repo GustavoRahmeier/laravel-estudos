@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CargoController extends Controller
 {
 
-    public readonly Cargo $cargo; 
+    public readonly Cargo $cargo;
 
     public function __construct()
     {
@@ -21,7 +21,7 @@ class CargoController extends Controller
     public function index()
     {
         $cargos = $this->cargo->all();
-        return view('cargos', ['cargos' => $cargos]);        
+        return view('cargos', ['cargos' => $cargos]);
     }
 
     /**
@@ -79,7 +79,8 @@ class CargoController extends Controller
             return redirect()->route('cargos.index')->with('message', 'Atualizado com sucesso');
         } else {
             return redirect()->back()->with('message', 'Ocorreu um erro ao atualizar');
-        }    }
+        }
+    }
 
     /**
      * Remove the specified resource from storage.

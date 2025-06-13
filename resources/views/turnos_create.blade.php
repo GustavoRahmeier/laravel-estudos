@@ -13,7 +13,6 @@
         </div>
 
         <button type="submit">Cadastrar</button><br><br>
-                
     </form> 
 
      <a href="{{ url()->previous() }}" class="btn-cancelar">Cancelar</a>

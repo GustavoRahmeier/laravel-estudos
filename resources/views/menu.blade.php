@@ -7,6 +7,7 @@
         <a href="{{ route('produtos.index') }}" >Listar Produtos</a>
         <a href="{{ route('funcionarios.index') }}" >Listar Funcionários</a>
         <a href="{{ route('cargos.index') }}" >Listar Cargos</a>
+        <a href="{{ route('turnos.index') }}" >Listar Turnos</a>
     </div>
 </div>
 @endsection
