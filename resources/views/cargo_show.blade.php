@@ -39,7 +39,7 @@
         <input type="hidden" name="_method" value="DELETE">
         
         <div style="display: flex; gap: 10px; align-items: center;">
-            <a href="{{ route('cargos.index') }}" class="btn-voltar">VOLTAR</a>
+            <a href="{{ route('cargos.index') }}" class="btn-voltar">Voltar</a>
             <button class="delete-button" type="submit">APAGAR</button>
         </div>
 
